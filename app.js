@@ -1,8 +1,4 @@
-// const os = require('os');
-
-// console.log('Platform: ', os.platform());
-// console.log('Arch: ', os.arch());
-// console.log('User: ', os.userInfo().username);
+'use strict'
 
 const fs = require('fs');
 
@@ -17,13 +13,12 @@ const randChoice = function(arr) {
 
 const people = [];
 
-for (i = 0; i <= 20; i++) {
-    let i;
+for (let i = 0; i <= 20; i++) {
     const randomPerson = {};
     randomPerson.gender = randChoice(gender);
     randomPerson.firstName = randomPerson.gender === 'M' ? randChoice(maleNames) : randChoice(femaleNames);
     randomPerson.lastName = randChoice(lastName);
-    randomPerson.age = Math.floor(Math.random()*(78-18-1)+18);
+    randomPerson.age = Math.floor(Math.random()*(78-18+1)+18);
     randomPerson.email = `${randomPerson.firstName}.${randomPerson.lastName}@gmail.com`;
 
     people.push(randomPerson);
